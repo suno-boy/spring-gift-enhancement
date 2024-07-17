@@ -5,7 +5,6 @@ import gift.DTO.ProductDTO;
 import gift.Entity.CategoryEntity;
 import gift.Entity.ProductEntity;
 import gift.Repository.CategoryRepository;
-import gift.Repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
