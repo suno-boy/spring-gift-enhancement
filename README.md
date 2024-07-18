@@ -34,19 +34,19 @@
   - 중복된 옵션은 구매 시 고객에게 불편을 줄 수 있다. 동일한 상품 내의 옵션 이름은 중복될 수 없다.
 
 - **구현 기능**
-  - [ ] OptionEntity 생성하기
-  - [ ] OptionDTO 생성하기
-  - [ ] 상품(Product)과 Option의 연관관계 매핑하기(양방향)
-  - [ ] 상품(Product)DTO, Service등에 Option관련해서 리팩토링
-  - [ ] OptionRepository(JPA) 생성
-  - [ ] OptionService계층에 CRUD 구현
-  - [ ] OptionController계층에 CRUD 구현
-  - [ ] OptionEntity에 다음 유효성 검사 로직 추가
+  - [x] OptionEntity 생성하기
+  - [x] OptionDTO 생성하기
+  - [x] 상품(Product)과 Option의 연관관계 매핑하기(양방향)
+  - [x] 상품(Product)DTO, Service등에 Option관련해서 리팩토링
+  - [x] OptionRepository(JPA) 생성
+  - [x] OptionService계층에 CRUD 구현
+  - [x] OptionController계층에 CRUD 구현
+  - [x] OptionEntity에 다음 유효성 검사 로직 추가
       - 옵션 이름은 공백을 포함하여 최대 50자까지 입력 가능
       - 특수 문자는 ( ), [ ], +, -, &, /, _만 가능하고 그 외의 특수문자는 사용 불가
       - 옵션 수량은 최소 1개 이상 1억 개 미만
       - 동일한 상품 내의 옵션 이름은 중복될 수 없음.
-  - [ ] 테스트 코드 추가
+  - [x] 테스트 코드 추가
 
 
 
