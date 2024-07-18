@@ -36,7 +36,8 @@
 - **구현 기능**
   - [ ] OptionEntity 생성하기
   - [ ] OptionDTO 생성하기
-  - [ ] 상품(Product)과 Option의 연관관계 매핑하기(단방향)
+  - [ ] 상품(Product)과 Option의 연관관계 매핑하기(양방향)
+  - [ ] 상품(Product)DTO, Service등에 Option관련해서 리팩토링
   - [ ] OptionRepository(JPA) 생성
   - [ ] OptionService계층에 CRUD 구현
   - [ ] OptionController계층에 CRUD 구현
