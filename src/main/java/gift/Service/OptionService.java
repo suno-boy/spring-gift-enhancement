@@ -4,8 +4,10 @@ import gift.Entity.OptionEntity;
 import gift.Entity.ProductEntity;
 import gift.DTO.OptionDTO;
 import gift.Repository.OptionRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +30,7 @@ public class OptionService {
     }
 
     public OptionDTO getOptionById(Long id) {
-        OptionEntity optionEntity = optionRepository.findById(id).orElseThrow(() -> new RuntimeException("Option not found"));
+        OptionEntity optionEntity = optionRepository.findById(id).orElseThrow(() -> new RuntimeException("Option을 찾을 수 없습니다."));
         return convertToDTO(optionEntity);
     }
 
@@ -38,7 +40,7 @@ public class OptionService {
     }
 
     public OptionDTO updateOption(Long id, OptionDTO optionDTO) {
-        OptionEntity optionEntity = optionRepository.findById(id).orElseThrow(() -> new RuntimeException("Option not found"));
+        OptionEntity optionEntity = optionRepository.findById(id).orElseThrow(() -> new RuntimeException("Option을 찾을 수 없습니다."));
         if (!optionEntity.getName().equals(optionDTO.getName())) {
             validateOptionNameUniqueness(optionDTO.getName(), optionDTO.getProductId());
         }
