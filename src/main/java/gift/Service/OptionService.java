@@ -50,6 +50,23 @@ public class OptionService {
         return convertToDTO(optionEntity);
     }
 
+
+    @Transactional
+    public OptionDTO substractQuantity(Long id,Long substractQuantity, OptionDTO optionDTO) {
+        OptionEntity optionEntity = optionRepository.findById(id).orElseThrow(() -> new RuntimeException("Option을 찾을 수 없습니다."));
+        if (!optionEntity.getName().equals(optionDTO.getName())) {
+            validateOptionNameUniqueness(optionDTO.getName(), optionDTO.getProductId());
+        }
+        if(substractQuantity > optionEntity.getQuantity()) {
+            throw new RuntimeException("감소시키려는 수량보다 남은 재고가 적습니다.");
+        }
+        optionEntity.setQuantity(optionEntity.getQuantity() - substractQuantity);
+        optionEntity.setName(optionDTO.getName());
+        optionEntity = optionRepository.save(optionEntity);
+        return convertToDTO(optionEntity);
+    }
+
+
     public void deleteOption(Long id) {
         optionRepository.deleteById(id);
     }
